@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="E:\git\EmpWageComputation\LineComparison\EqualityOfLine.cs" Link="EqualityOfLine.cs" />
+  </ItemGroup>
+
 </Project>

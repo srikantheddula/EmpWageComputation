@@ -2,13 +2,13 @@
 
 namespace LineComparison
 {
-    internal class Program
+    class Program
     {
        
        
         static void Main(string[] args)
         {
-            EqualityOfLine obj = new EqualityOfLine(2, 2, 6, 2);
+            EqualityOfLine obj = new EqualityOfLine(2, 9, 6, 2);
             Console.WriteLine("length of line  "+obj.LineLength());
             obj.ComparingLines();
 
