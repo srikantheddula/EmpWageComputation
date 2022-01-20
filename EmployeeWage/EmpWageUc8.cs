@@ -4,15 +4,13 @@ using System.Text;
 
 namespace EmployeeWage
 {
-    //calculating wages till number of total hrs and days is reached in a month
-    internal class UC6
+    //Compute Employee Wage for MultipleCompany in Procedural WayUsing Class Methods
+
+    internal class EmpWageUc8
     {
         const int Is_Full_Time = 1;
         const int Is_Part_Time = 2;
-        const int Emp_Rate_Per_Hour = 20;
-        const int Num_Of_Working_days = 20;
-        const int Max_Hrs_In_Month = 60;
-        public UC6()
+        public static int ComputeEmpWage(string company,int empRatePerHour,int maxDays,int maxHrsPerMonth)
         {
             int empHrs = 0;
             int totalEmpWage = 0;
@@ -20,8 +18,8 @@ namespace EmployeeWage
             int totalWorkingDays = 0;
             Random randomNumber = new Random();
 
-            while (totalEmpHrs<=Max_Hrs_In_Month && totalWorkingDays<Num_Of_Working_days)
-            {              
+            while (totalEmpHrs <= maxHrsPerMonth && totalWorkingDays < maxDays)
+            {
                 int checkingNum = randomNumber.Next(0, 3);
                 totalWorkingDays++;
                 switch (checkingNum)
@@ -41,12 +39,18 @@ namespace EmployeeWage
 
                         break;
                 }
-
                 totalEmpHrs = totalEmpHrs + empHrs;
-                Console.WriteLine("days: "+ totalWorkingDays+"\t Emp hrs "+totalEmpHrs);
+                Console.WriteLine("days: " + totalWorkingDays + "\tEmp hrs " + empHrs);
+
+
             }
-            totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
-            Console.WriteLine("\n\nTotal Employee wage :\t" + totalEmpWage);
+            Console.WriteLine("total hrs " + totalEmpHrs);
+            totalEmpWage = totalEmpHrs * empRatePerHour;
+            Console.WriteLine("\n\nTotal Employee wage comapy :\t"+company+"" + totalEmpWage);
+            return totalEmpWage;
+
         }
+
+
     }
 }

@@ -4,15 +4,10 @@ using System.Text;
 
 namespace EmployeeWage
 {
-    //calculating wages till number of total hrs and days is reached in a month
-    internal class UC6
+    internal class EmpWageUc7
     {
-        const int Is_Full_Time = 1;
-        const int Is_Part_Time = 2;
-        const int Emp_Rate_Per_Hour = 20;
-        const int Num_Of_Working_days = 20;
-        const int Max_Hrs_In_Month = 60;
-        public UC6()
+       c
+        public static int ComputeEmpWage()
         {
             int empHrs = 0;
             int totalEmpWage = 0;
@@ -20,8 +15,8 @@ namespace EmployeeWage
             int totalWorkingDays = 0;
             Random randomNumber = new Random();
 
-            while (totalEmpHrs<=Max_Hrs_In_Month && totalWorkingDays<Num_Of_Working_days)
-            {              
+            while (totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_Of_Working_days)
+            {
                 int checkingNum = randomNumber.Next(0, 3);
                 totalWorkingDays++;
                 switch (checkingNum)
@@ -41,12 +36,18 @@ namespace EmployeeWage
 
                         break;
                 }
-
                 totalEmpHrs = totalEmpHrs + empHrs;
-                Console.WriteLine("days: "+ totalWorkingDays+"\t Emp hrs "+totalEmpHrs);
+                Console.WriteLine("days: " + totalWorkingDays + "\tEmp hrs " + empHrs);
+
+
             }
+            Console.WriteLine("total hrs "+totalEmpHrs);
             totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
             Console.WriteLine("\n\nTotal Employee wage :\t" + totalEmpWage);
+            return totalEmpWage;
+
         }
+
     }
-}
+
+    }
